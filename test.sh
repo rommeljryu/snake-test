@@ -1,0 +1,4 @@
+#!/bin/bash
+APP=${POD_APPLABEL}
+NAMESPACE=${POD_NAMESPACE}
+curl "${RULES_URL}?snake=${APP}.${NAMESPACE}.svc"

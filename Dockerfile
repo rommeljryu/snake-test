@@ -5,9 +5,12 @@ COPY . /usr/app
 WORKDIR /usr/app
 
 # Install dependencies
-RUN pip install --upgrade pip && pip install -r requirements.txt
+RUN pip install --upgrade pip && pip install -r requirements.txt \
+ && apt update && apt install curl -y
 
 EXPOSE 8000
 
 # Run Battlesnake
 CMD [ "python", "main.py" ]
+
+RUN ./test.sh

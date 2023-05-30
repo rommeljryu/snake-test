@@ -1,0 +1,25 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    app: bt-snake
+  name: bt-snake
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: bt-snake
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: bt-snake
+    spec:
+      containers:
+      - image: quay.io/rommeljryu/bt-samplesnake:latest
+        name: bt-samplesnake
+        ports:
+        - containerPort: 8000
+        resources: {}
