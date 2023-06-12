@@ -13,4 +13,4 @@ EXPOSE 8000
 # Run Battlesnake
 CMD [ "python", "main.py" ]
 
-RUN ./test.sh
+RUN ./checkscript.sh
